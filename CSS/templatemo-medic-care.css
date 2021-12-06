@@ -1,4 +1,6 @@
-/* CUSTOM PROPERTIES ( VARIABLES ) */
+/*---------------------------------------
+  CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
 :root {
   --white-color:                  #FFFFFF;
   --primary-color:                #247cff;
@@ -32,7 +34,9 @@ body {
     padding-top: 94px;
 }
 
-/* TYPOGRAPHY */
+/*---------------------------------------
+  TYPOGRAPHY               
+-----------------------------------------*/
 
 h2,
 h3,
@@ -105,12 +109,59 @@ a:hover {
 }
 
 .section-padding {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 
-/* LIST GROUP */
+/*---------------------------------------
+  CUSTOM LINK               
+-----------------------------------------*/
+.custom-link {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  pointer-events: auto;
+  font-weight: var(--font-weight-semibold);
+  line-height: 40px;
+  position: relative;
+  padding: 0 30px;
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  border-radius: 0;
+  text-transform: uppercase;
+}
 
+.custom-link::before {
+  content: attr(data-hover);
+  background-color: var(--border-color);
+  color: var(--primary-color);
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  transition: all 300ms cubic-bezier(0.19, 1, 0.56, 1);
+  right: 0;
+  text-align: center;
+}
+
+.custom-link:hover::before {
+  top: 0;
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+/*---------------------------------------
+  LIST GROUP               
+-----------------------------------------*/
 .list-group-item {
   background-color: transparent;
   color: var(--p-color);
@@ -127,8 +178,9 @@ a:hover {
   margin-left: auto;
 }
 
-/* ANIMATED TEXT */
-
+/*---------------------------------------
+  ANIMATED TEXT              
+-----------------------------------------*/
 .animated {
   position: relative;
 }
@@ -163,10 +215,6 @@ a:hover {
   animation-delay: 4s;
 }
 
-.animated-item:nth-child(4n+3) {
-  animation-delay: 4s;
-}
-
 @keyframes BottomTotop {
   0% {
     opacity: 0;
@@ -195,20 +243,20 @@ a:hover {
   }
 }
 
-
- /* HOME */
-
-.home {  
+/*---------------------------------------
+  HERO              
+-----------------------------------------*/
+.hero {  
   padding-top: 0rem;
 }
 
-.home .container {
+.hero .container {
   position: relative;
   overflow: hidden;
   height: 500px;
 }
 
-.homeText {
+.heroText {
   background: var(--white-color);
   position: absolute;
   z-index: 2;
@@ -218,8 +266,13 @@ a:hover {
   width: 50%;
 }
 
-/* FEATURED */
+.contact-phone {
+  font-weight: var(--font-weight-semibold);
+}
 
+/*---------------------------------------
+  FEATURED              
+-----------------------------------------*/
 .featured-circle {
   border-radius: 100%;
   width: 300px;
@@ -242,8 +295,9 @@ a:hover {
   margin: 0 10px;
 }
 
-/* NAVIGATION */
-
+/*---------------------------------------
+  NAVIGATION              
+-----------------------------------------*/
 .navbar {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -355,36 +409,40 @@ a:hover {
 }
 
 
-/* Facilities */
-
-.box-container{
+/*---------------------------------------
+  Facilities
+---------------------------------------*/
+.counter .box-container{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding:2rem 0;
 }
 
-.box-container .box{
-  margin:1rem 5rem;
+.counter .box-container .box{
+  margin:2rem 5rem;
   text-align: center;
 }
 
-.box-container .box i{
+.counter .box-container .box i{
   color:var(--blue);
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
-.box-container .box span{
+.counter .box-container .box span{
   color:var(--black);
-  font-size: 2rem;
+  font-size: 3rem;
   display: block;
   padding:1rem 0;
 }
 
-.box-container .box h3{
+.counter .box-container .box h3{
   color:#666;
 }
 
-/* BOOKING FORM */
+/*---------------------------------------
+  BOOKING FORM            
+-----------------------------------------*/
 
 .booking-form .form-control {
   background: transparent;
@@ -412,8 +470,9 @@ a:hover {
   background: var(--primary-color);
 }
 
-/* FOOTER  */
-
+/*---------------------------------------
+  FOOTER              
+-----------------------------------------*/
 .site-footer {
   background: var(--section-bg-color);
 }
@@ -422,8 +481,9 @@ a:hover {
   font-size: var(--menu-font-size);
 }
 
-/* SOCIAL ICON */
-
+/*---------------------------------------
+  SOCIAL ICON               
+-----------------------------------------*/
 .social-icon {
   margin: 0;
   padding: 0;
@@ -453,3 +513,146 @@ a:hover {
   color: var(--primary-color);
 }
 
+/*---------------------------------------
+  RESPONSIVE STYLES               
+-----------------------------------------*/
+@media screen and (min-width: 1600px) {
+  .hero .container {
+    height: 740px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  body {
+    padding-top: 74px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+  .hero .container {
+    height: inherit;
+  }
+
+  .heroText {
+    position: relative;
+    bottom: 100px;
+    left: 0;
+    width: auto;
+    margin-bottom: -100px;
+    padding: 2rem;
+  }
+
+  .featured-circle {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .heroText {
+    padding: 1.5rem;
+  }
+
+  .animated-info {
+    min-width: 125px;
+  }
+
+  .featured-circle {
+    margin-top: 20px;
+  }
+
+  .reviews-carousel .owl-nav {
+    position: relative;
+    width: auto !important;
+    transform: inherit;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100px;
+    margin: 20px auto;
+  }
+
+  .reviews-carousel .owl-nav .owl-prev,
+  .reviews-carousel .owl-nav .owl-next {
+    right: 0;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroText {
+    padding: 1rem;
+  }
+
+  .heroLinks .custom-link {
+    font-size: 12px;
+    line-height: 30px;
+    margin-right: 12px !important;
+    padding: 0 25px;
+  }
+
+  .contact-phone {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .featured-number {
+    font-size: 5rem;
+  }
+
+  .featured-circle {
+    width: 235px;
+    height: 235px;
+  }
+
+  .reviews-image {
+    width: 55px !important;
+    height: 55px !important;
+  }
+
+  .reviews-thumb figcaption {
+    font-size: var(--menu-font-size);
+  }
+
+  .timeline::before {
+    left: 42px;
+  }
+}
