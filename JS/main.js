@@ -8,7 +8,7 @@
         $(".navbar-collapse").collapse('hide');
     });
 
-    // Banner Carousel
+    // Banner Carousel  
     var myCarousel = document.querySelector('#myCarousel')
     var carousel = new bootstrap.Carousel(myCarousel, {
       interval: 1500,
@@ -25,10 +25,7 @@
       // location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
       // What we're doing is replacing the first forward slash (/) in the pathname
       // for the current location and comparing it to the link that's been clicked.
-      // So http://personalsite.com/test/link/src, which normally would have
-      // a pathname of /test/link/src would be test/link/src
-
-      // The or check (||) is to see if the link matches the current domain
+      // The and check (&&) is to see if the link matches the current domain
       // location.hostname == this.hostname
 
       // Basically, we want an internal anchor for the page we're on.
@@ -36,21 +33,20 @@
         location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 
         // Assigning the variable target, with the hash of the link that's been clicked
-        // which is conveniently enough, a jquery selector for IDs (i.e. #hash)
         var target = $(this.hash);
 
         // We check the target length - basically, does the element exist?
         // If length equals to 0, we query the DOM by name attribute. Otherwise, we just re-assign target to self.
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 
-
-        // The rest is self explanatory... (animation  using the target's offset)
+        // The rest is self explanatory... (animation using the target's offset)
         // The return false prevents default behavior
         if (target.length) {
           event.preventDefault();
           $('html, body').animate({
             scrollTop: target.offset().top - 74
           }, 1000);
+          return false;
         }
       }
     });    
